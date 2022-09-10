@@ -61,7 +61,7 @@ function compute() {
   let current = +currentOperand;
 
   if (isNaN(prev) || isNaN(current)) return;
-  console.log(operation);
+
   switch (operation) {
     case '+':
       computation = add(prev, current);
@@ -84,58 +84,6 @@ function compute() {
   operation = undefined;
   previousOperand = '';
 }
-
-// function compute(previousOperand, currentOperand, operation) {
-//   prev = parseFloat(previousOperand);
-
-//   current = parseFloat(currentOperand);
-
-//   if (isNaN(prev) || isNaN(current)) return;
-
-//   switch (operation) {
-//     case operation === '+':
-//       computation = add(prev, current);
-//       break;
-//     case operation === '-':
-//       computation = subtract(prev, current);
-//       break;
-//     case operation === '*':
-//       computation = multiply(prev, current);
-//       break;
-//     case operation === '÷':
-//       computation = divide(prev, current);
-//       break;
-//     default:
-//       return;
-//   }
-
-//   currentOperand = computation;
-
-//   operation = undefined;
-//   previousOperand = '';
-// }
-
-// function getDisplayNumber(number) {
-//   const stringNumber = number.toString();
-//   const integertDigits = parseFloat(stringNumber.split('.')[0]);
-//   const decimalDigits = stringNumber.split('.')[1];
-
-//   let integerDisplay;
-
-//   if (isNaN(integertDigits)) {
-//     integerDisplay = '';
-//   } else {
-//     integerDisplay = integertDigits.toLocaleString('en', {
-//       maximumFractionDigits: 0,
-//     });
-//   }
-
-//   if (decimalDigits != null) {
-//     return `${integerDisplay}.${decimalDigits}`;
-//   } else {
-//     return integerDisplay;
-//   }
-// }
 
 function updateDisplay() {
   currentOperandTextElement.innerText = currentOperand;
