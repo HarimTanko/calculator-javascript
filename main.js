@@ -31,13 +31,13 @@ function attachNumber(number) {
 }
 
 function chooseOperation(e) {
+  operation = e.innerText;
   if (currentOperand === '') return;
 
   if (previousOperand !== '') {
     compute();
   }
 
-  operation = e;
   previousOperand = currentOperand;
   currentOperand = '';
 }
@@ -101,7 +101,7 @@ numberButtons.forEach((button) => {
 
 operationButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    chooseOperation(button.innerText);
+    chooseOperation(button);
     updateDisplay();
   });
 });
@@ -116,7 +116,7 @@ allClear.addEventListener('click', () => {
   updateDisplay();
 });
 
-deleteButton.addEventListener('click', (button) => {
+deleteButton.addEventListener('click', () => {
   deleteInteger();
   updateDisplay();
 });
